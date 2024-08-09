@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <form class="form" (ngSubmit)="createCube()">
+      <div class="container">
+        <div class="row">
+          <div class="col"><label for="color" class="form-label">Color:</label></div>
+          <div class="col text-end">
+            <input type="color" name="color" class="form-control-color" [(ngModel)]="cubeColor" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"><label for="width" class="form-label">Width:</label></div>
+          <div class="col text-end">
+            <input type="number" name="width" class="form-control-lg" [(ngModel)]="cubeWidth" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"><label for="height" class="form-label">Height:</label></div>
+          <div class="col text-end">
+            <input type="number" name="height" class="form-control-lg" [(ngModel)]="cubeHeight" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center mt-2">
+            <button type="submit"  class="btn btn-secondary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+ 
+  

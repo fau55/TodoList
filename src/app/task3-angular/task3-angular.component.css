@@ -1,0 +1,10 @@
+.hide{
+    display: none ;
+}
+button {
+    margin-right: 10px;
+  }
+  
+  .active {
+    background-color: rgb(18, 18, 18);
+  }

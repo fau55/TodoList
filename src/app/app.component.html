@@ -1,0 +1,77 @@
+<div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar" class="bg-dark">
+    <div class="p-2">
+      <a href="#" class="img logo rounded-circle mb-2"></a>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a (click)="showComponent1()">University</a>
+        </li>
+        <li>
+          <a (click)="showComponent2()">To Do List</a>
+        </li>
+        <li>
+          <a (click)="showComponent3()">Paragraphs</a>
+        </li>
+        <li>
+          <a (click)="showComponent4()">Fruits</a>
+        </li>
+        <li>
+          <a (click)="showComponent5()">Users Dashboard</a>
+        </li>
+        <li>
+          <a (click)="showComponent6()">Color Cube</a>
+        </li>
+        <li>
+          <a (click)="showComponent6()">Country list</a>
+        </li>
+        <li>
+          <a (click)="showComponent8()">ToDoList with db</a>
+        </li>
+      </ul>
+      <div class="footer">
+        <!-- <p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by -->
+          <a href="https://colorlib.com" target="_blank"></a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.</p> -->
+      </div>
+
+    </div>
+  </nav>
+
+    <!-- Page Content  -->
+  <div id="content" class="">
+    <ng-container *ngIf="currentComponent === 'university'">
+      <app-university></app-university>
+    </ng-container>
+<ng-container *ngIf="currentComponent === 'toDoList'">
+  <app-to-do-list></app-to-do-list>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'task3-angular'">
+  <app-task3-angular></app-task3-angular>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'fruits'">
+  <app-fruits></app-fruits>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'users'">
+  <app-users></app-users>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'color-Cube'">
+  <app-color-cube></app-color-cube>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'color-cube-view'">
+  <app-color-cube-view></app-color-cube-view>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'home'">
+  <app-home></app-home>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'country-list'">
+  <app-country-list></app-country-list>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'country-details'">
+  <app-country-details></app-country-details>
+</ng-container>
+<ng-container *ngIf="currentComponent === 'todolist-db'">
+  <app-todolist-db></app-todolist-db>
+</ng-container>
+  </div>
+</div>

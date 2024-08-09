@@ -1,0 +1,135 @@
+<section class="m-0">
+    <div class="container-fluid p-0 h-100">
+        <div class="row d-flex cardBg justify-content-center align-items-center h-100">
+            <div class="card m-0 px-0 " id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+                <div class="card-body px-0">
+                    <div class="row">
+                        <div class=" col-md-6 text-start h1 mt-1 text-light ">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                class="text-primary"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path
+                                    d="M342.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 178.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l80 80c12.5 12.5 32.8 12.5 45.3 0l160-160zm96 128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 402.7 54.6 297.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l256-256z" />
+                            </svg>
+                            <u>My Todo List</u>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="formbtn mt-4" data-toggle="tooltip" data-placement="top" title="Add Task">Add
+                                Task++</button>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class=" col-md-12 taskCol mb-4">
+                            <div class="card m-auto taskCol bg-dark">
+                                <div class="card-body text-center text-light rounded">
+                                    <!-- <h4>Tasks...</h4> -->
+                                    <table class="table">
+                                        <!-- <thead> -->
+                                        <tr>
+                                            <th>Task</th>
+                                            <th>Descrpition</th>
+                                            <th>Status</th>
+                                            <th>Started Task At</th>
+                                            <th>Updated Task At</th>
+                                            <th>Edit</th>
+                                        </tr>
+                                        <!-- </thead> -->
+                                        <!-- <tbody> -->
+                                        <tr *ngFor="let task of taskList"
+                                            [ngClass]="{Active: task.status=='Active', Pending: task.status=='Pending', Completed: task.status=='Completed'}">
+                                            <td class="ps-2">{{task.taskToDo}}</td>
+                                            <td>{{task.description}}</td>
+                                            <td>{{task.status}}</td>
+                                            <td>{{task.createdOn | date: 'dd/MM/yyyy HH:mm'}}</td>
+                                            <td>{{task.updatedOn}}</td>
+                                            <td>
+                                                <button type="button" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal2" class="btn formbtn2"
+                                                    (click)="editTask(task)">Edit</button>
+                                                <button class="btn formbtn2" (click)="deleteTask(task)">Delete</button>
+                                            </td>
+                                        </tr>
+                                        <!-- </tbody> -->
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+
+    <!-- Modal -->
+</section>
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  ">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class=" col-md-12 taskCol">
+                    <div class="card taskCol bg-dark">
+                        <div class="card-body rounded">
+                            <form class="form-control">
+                                <label for="Task" class="form-control">Task:</label>
+                                <input type="text" name="Task" class="form-control form-control-lg "
+                                    [(ngModel)]="taskName">
+                                <label for="Description" class="form-control">Description:</label>
+                                <textarea name="Description" class="form-control"
+                                    [(ngModel)]="taskDescription"></textarea>
+                                <label for="status" class="form-control">Status:</label>
+                                <select name="status" class="form-control form-control-lg" [(ngModel)]="taskStatus">
+                                    <option value="Active" selected>Active</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                                <div class="text-end">
+                                    <button class="formbtn mt-4" data-bs-dismiss="modal" (click)="addNewTask()">Add Task
+                                    </button>
+                                    <button type="button" class="formbtn" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog  ">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class=" col-md-12 taskCol">
+                    <div class="card taskCol bg-dark">
+                        <div class="card-body rounded">
+                            <form class="form-control" [formGroup]="updateTaskForm">
+                                <label for="Task" class="form-control">Task:</label>
+                                <input type="text" name="Task" class="form-control form-control-lg "
+                                    formControlName="taskToUpdate">
+                                <label for="Description" class="form-control">Description:</label>
+                                <textarea name="Description" class="form-control"
+                                    formControlName="descriptionToUpdate"></textarea>
+                                <label for="status" class="form-control">Status:</label>
+                                <select name="status" class="form-control form-control-lg"
+                                    formControlName="statusToUpdate">
+                                    <option value="Active" selected>Active</option>
+                                    <option value="Pending">Pending</option>
+                                    <option value="Completed">Completed</option>
+                                </select>
+                                <div class="text-end">
+                                    <button class="formbtn mt-4" data-bs-dismiss="modal" (click)="UpdateTask()">Update Task
+                                    </button>
+                                    <button type="button" class="formbtn" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

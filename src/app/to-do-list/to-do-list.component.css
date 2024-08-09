@@ -1,0 +1,135 @@
+#list1 .form-control {
+    border-color: transparent;
+}
+
+#list1 .form-control:focus {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+section {
+    position: fixed;
+    top: 10px;
+    width: 80%;
+}
+
+section svg {
+    height: 25px;
+    margin-inline: 15px;
+    /* background: blue; */
+}
+
+textarea {
+    margin-bottom: 10px;
+    resize: none;
+}
+
+
+form label {
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+
+form {
+    border: none;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.formbtn {
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-right: 20px;
+    font-weight: bold;
+    background: #c31432;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #721323, #670d80);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.formbtn2 {
+    margin-block: 4px;
+    padding: 8px;
+    color: white;
+    margin-inline: 4px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    background-image: linear-gradient(to right top, #484646, #373535, #262525, #171616, #000000);
+
+
+}
+
+.card {
+    border-radius: 20px;
+    border: 2px solid white;
+    background-image: linear-gradient(to right top, #484646, #373535, #262525, #171616, #000000);
+}
+
+.taskCol {
+    height: 100%
+}
+
+.modal-body {
+    border-radius: 20px;
+    background-image: linear-gradient(to right top, #484646, #373535, #262525, #171616, #000000);
+}
+
+.modal-content {
+    border-radius: 20px;
+}
+
+.Active {
+    background: #2c3e50;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3498db, #2c3e50);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.Pending {
+    /* color: palevioletred; */
+    background: #FF0099;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #493240, #FF0099);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #493240, #FF0099);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.Completed {
+    background: #52c234;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #061700, #52c234);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #061700, #52c234);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+table, tbody, thead,tr{
+    padding-top: 50px;
+    background-color: inherit;
+}
+th{
+    padding-bottom: 20px;
+}
+td{
+    /* margin-top: 20px; */
+    /* padding-top: 10px; */
+}

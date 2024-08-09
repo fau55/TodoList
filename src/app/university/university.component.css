@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+.row, col, [class*="col-"] {
+    padding-inline: 0;
+    margin-inline: 0;
+}
+.col a{
+    font-size: 22px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.card{
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(160, 105, 146);
+    color: white;
+}

@@ -1,0 +1,100 @@
+<section class="">
+  <div class="container-fluid h-100">
+    <div class="row d-flex cardBg justify-content-center align-items-center h-100">
+      <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+        <div class="card-body px-2 px-md-2">
+          <div class="row">
+            <div class=" col-md-6 text-start h1 mt-3 text-light ">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                class="text-primary"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                  d="M342.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 178.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l80 80c12.5 12.5 32.8 12.5 45.3 0l160-160zm96 128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 402.7 54.6 297.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l256-256z" />
+              </svg>
+              <u>My Todo List</u>
+            </div>
+            <div class="col-md-6 text-end">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="formbtn mt-4"
+                data-toggle="tooltip" data-placement="top" title="Add Task">Add
+                Task++</button>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class=" col-md-12 taskCol mb-4">
+              <div class="card taskCol bg-dark">
+                <div class="card-body text-center text-light rounded">
+                  <!-- <h4>Tasks...</h4> -->
+                  <table class="table">
+                    <!-- <thead> -->
+                    <tr>
+                      <th>Task</th>
+                      <th>Descrpition</th>
+                      <th>Status</th>
+                      <th>Started Task At</th>
+                      <th>Completed Task At</th>
+                      <th>Edit</th>
+                    </tr>
+                    <!-- </thead> -->
+                    <!-- <tbody> -->
+                    <tr
+                      [ngClass]="{Active: item.status=='Active', Pending: item.status=='Pending', Completed: item.status=='Completed'}"
+                      class="pt-5" *ngFor="let item of updatedArray; let i = index;">
+                      <td>{{item.tasks}}</td>
+                      <td>{{item.descriptions}}</td>
+                      <td>{{item.status}}</td>
+                      <td>{{item.startedTime}} </td>
+                      <td>{{item.CompletedTime}} </td>
+                      <td>
+                        <button class="btn formbtn2" (click)="deleteTask(i)">Delete</button>
+                        <button class="btn formbtn2" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                          (click)="editTask(i,item)">Edit</button>
+                      </td>
+                    </tr>
+                    <!-- </tbody> -->
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+  <!-- Modal -->
+</section>
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg ">
+    <div class="modal-content">
+      <div class="modal-body  pt-4">
+        <div class=" col-md-12 taskCol mb-4">
+          <div class="card taskCol bg-dark">
+            <div class="card-body rounded">
+              <form [formGroup]="taskDetails" class="form-control p-4 pb-5" (ngSubmit)="addTask()">
+                <label for="Task" class="form-control">Task:</label>
+                <input type="text" name="Task" class="form-control form-control-lg " formControlName="Tasks">
+                <label for="Description" class="form-control">Description:</label>
+                <textarea name="Description" class="form-control" formControlName="Descriptions"></textarea>
+                <label for="status" class="form-control">Status:</label>
+                <select name="status" class="form-control form-control-lg" formControlName="Status">
+                  <option value="Active" selected>Active</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Completed">Completed</option>
+                </select>
+                <div class="text-end"><button type="submit" class="formbtn mt-4" data-bs-dismiss="modal">Add
+                    Task</button>
+                  <button type="button" class="formbtn" data-bs-dismiss="modal">Close</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
