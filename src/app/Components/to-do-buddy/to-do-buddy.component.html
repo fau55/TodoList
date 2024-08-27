@@ -36,7 +36,7 @@
                                         <!-- </thead> -->
                                         <!-- <tbody> -->
                                         <tr *ngFor="let task of taskList"
-                                            [ngClass]="{Active: task.status=='Active', Pending: task.status=='Pending', Completed: task.status=='Completed'}">
+                                            [ngClass]="{'Active': task.status=='Active', 'Pending': task.status=='Pending', 'Completed': task.status=='Completed'}">
                                             <td class="ps-2">{{task.taskToDo}}</td>
                                             <td>{{task.description}}</td>
                                             <td>{{task.status}}</td>
