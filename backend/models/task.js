@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
 //? creating schema with the help of mongoose...
-
-const task = mongoose.Schema({
+const taskSchema = mongoose.Schema({
     taskToDo : {type : String, require: true},
     createdOn : {type: String},
     status : {type: String},
@@ -10,6 +9,6 @@ const task = mongoose.Schema({
     updatedOn : {type: String, default: '---'}
 });
 
-module.exports = {
-    Task : mongoose.model('Task', task)
-};
+const Task = mongoose.model('tasks', taskSchema);
+
+module.exports = Task;
